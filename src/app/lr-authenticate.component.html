@@ -1,0 +1,25 @@
+
+
+<form
+#lrAuthenticateForm="ngForm"
+(ngSubmit)="onSubmit(lrAuthenticateForm.value)">
+  <ul>
+    <li>
+      <label for="email">Email</label>
+      <input type="text" name="email" ngModel>
+    </li>
+    <li>
+      <label for="password">Password</label>
+      <input type="password" name="password" ngModel>
+    </li>
+    <button type="submit">Authenticate</button>
+
+  </ul>
+</form>
+
+<div *ngIf="uid">
+    The authentication is successful. <br>
+    UID :  {{uid}} <br>
+    ID : {{id}}
+
+</div>

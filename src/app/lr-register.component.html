@@ -1,0 +1,23 @@
+
+
+<form
+#lrRegisterForm="ngForm"
+(ngSubmit)="onSubmit(lrRegisterForm.value)">
+  <ul>
+    <li>
+      <label for="email">Email</label>
+      <input type="text" name="email" ngModel>
+    </li>
+    <li>
+      <label for="password">Password</label>
+      <input type="password" name="password" ngModel>
+    </li>
+    <button type="submit">Register</button>
+
+  </ul>
+</form>
+
+<div *ngIf="isPosted">
+  The registration form has successfully passed. Check your email box for confirmation link
+
+</div>

@@ -1,0 +1,15 @@
+<script type="text/javascript">
+        $LR.util.ready(function() {
+            //option object should be defined as given in 'Sample options initialization' above.
+            LoginRadiusRaaS.init(option, 'emailverification', function(response) {
+            // succeed
+            // console.log(response);
+            console.log(response);
+            window.alert("verification success! go back to home");
+            }, function(errors) {
+            // error
+            // console.log(errors)
+            console.log(errors);
+            });
+        });
+</script>

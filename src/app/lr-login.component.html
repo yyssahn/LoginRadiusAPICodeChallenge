@@ -1,0 +1,25 @@
+
+
+<form
+#lrLoginForm="ngForm"
+(ngSubmit)="onSubmit(lrLoginForm.value)">
+  <ul>
+    <li>
+      <label for="email">Email</label>
+      <input type="text" name="email" ngModel>
+    </li>
+    <li>
+      <label for="password">Password</label>
+      <input type="password" name="password" ngModel>
+    </li>
+    <button type="submit">Authenticate</button>
+
+  </ul>
+</form>
+
+<div *ngIf="accessToken">
+    Login Successful<br>
+    Access Token is {{accessToken}}<br>
+    It expires in {{expires}}
+
+</div>

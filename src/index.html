@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Angular QuickStart</title>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <!-- LoginRadius v1 -->
+    <script src="//cdn.loginradius.com/hub/prod/js/LoginRadiusRaaS.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="option.js"></script>
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('main.js').catch(function(err){ console.error(err); });
+    </script>
+    <script src="//hub.loginradius.com/include/js/LoginRadius.js"></script>
+    <script type="text/javascript">
+    function loginradius_interface(){
+     $ui = LoginRadius_SocialLogin.lr_login_settings;
+     $ui.interfacesize = "small";
+     $ui.apikey = "b72e36fa-93bb-4860-bbb6-94dc96ac8440";
+     $ui.callback = "http://localhost:3000/social";
+     $ui.protocol = "http://"; /*or "https://"*/
+     $ui.callbacktype="QueryString";
+     $ui.lrinterfacecontainer ="interfacecontainerdiv";
+     LoginRadius_SocialLogin.init(options);
+    }
+    var options={};
+    options.login=true;
+    LoginRadius_SocialLogin.util.ready(loginradius_interface);
+    </script>
+  </head>
+
+  <body>
+    <my-app>Loading AppComponent content here ...</my-app>
+    <script tyep="text/javascritpt">
+
+
+</script>
+  </body>
+</html>
