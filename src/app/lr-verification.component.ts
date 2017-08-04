@@ -6,7 +6,6 @@ import { WindowRefService } from './windowRef.service';
 
 
 import 'rxjs/add/operator/toPromise';
-import './verification-script.js';
 declare var $LR :any;
 @Component({
   selector: 'lr-verification',
