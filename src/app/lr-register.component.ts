@@ -26,7 +26,7 @@ export class LRRegisterComponent  {
     let params = new URLSearchParams();
     params.set('appkey',this.globals.getAppKey());
     params.set('appsecret', this.globals.getappSecret());
-    let body = {'emailid':value.email, 'password': value.password, 'emailverificationurl':'http://localhost.com:3000/verification'};
+    let body = {'emailid':value.email, 'password': value.password, 'emailverificationurl':'http://localhost:3000/verification'};
     this.http.post(url, body, {search:params}).toPromise().then(response=>{
       if (response.json().isPosted){
         this.isPosted = true;
