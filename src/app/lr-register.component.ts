@@ -13,7 +13,8 @@ import 'rxjs/add/operator/toPromise';
 export class LRRegisterComponent  {
 
   isPosted;
-  constructor(private globals : LRVariableService, private http : Http ){}
+  constructor(private globals : LRVariableService,
+    private http : Http ){}
 
   ngOnInit(){
   }
@@ -21,8 +22,6 @@ export class LRRegisterComponent  {
 
   onSubmit(value){
     console.log(value);
-
-
     let url = this.globals.getRegisterUrl();
     let params = new URLSearchParams();
     params.set('appkey',this.globals.getAppKey());
@@ -33,11 +32,6 @@ export class LRRegisterComponent  {
         this.isPosted = true;
         console.log(this.isPosted);
       }
-
-    }
-
-    );
-
-
+    });
   }
 }

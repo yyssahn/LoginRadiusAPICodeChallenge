@@ -16,11 +16,9 @@ export class LRAuthenticateComponent  {
   uid;
   id;
   constructor(private globals : LRVariableService,
-  private http : Http     ) {
-  }
+  private http : Http) {}
 
   ngOnInit(){
-  
   }
 
 
@@ -40,12 +38,7 @@ export class LRAuthenticateComponent  {
         console.log(response.json());
         console.log(this.uid);
         console.log(this.id);
-
-
-    }
-
-    );
-
+        });
 
   }
 }

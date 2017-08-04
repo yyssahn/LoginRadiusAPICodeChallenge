@@ -25,20 +25,18 @@ export class LRVerificationComponent  {
 
     ngOnInit(){
       this.activatedRoute.queryParams.subscribe((params: Params) => {
-
-      let component = this;
-      this.lrs = this._window.LoginRadiusRaaS;
-      this.lrs.api.init(this._window.option);
-      this.lrs.api.emailVerification({
-          vtoken: params["vtoken"]
-      },
-      function(response) {
-          console.log(response);
-          alert ("verification complete!");
-      },
-      function(errors) {
-          console.log(errors);
-      });
+        this.lrs = this._window.LoginRadiusRaaS;
+        this.lrs.api.init(this._window.option);
+        this.lrs.api.emailVerification({
+            vtoken: params["vtoken"]
+        },
+        function(response) {
+            console.log(response);
+            alert ("verification complete!");
+        },
+        function(errors) {
+            console.log(errors);
+        });
       });
     }
 }

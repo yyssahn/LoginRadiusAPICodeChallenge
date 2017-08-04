@@ -34,7 +34,10 @@
     }
     var options={};
     options.login=true;
-    LoginRadius_SocialLogin.util.ready(loginradius_interface);
+    console.log($(location));
+    if($(location).attr('href')==="http://localhost:3000/social"){
+        LoginRadius_SocialLogin.util.ready(loginradius_interface);
+    }
     </script>
   </head>
 

@@ -16,13 +16,13 @@ export class LRForgotPasswordComponent  {
   isPosted;
   constructor(private globals : LRVariableService,
   private http : Http ){}
+
   ngOnInit(){
   }
 
 
   onSubmit(value){
     console.log(value);
-
     let url = this.globals.getForgotPasswordUrl();
     let params = new URLSearchParams();
     params.set('appkey',this.globals.getAppKey());
@@ -32,10 +32,7 @@ export class LRForgotPasswordComponent  {
         this.guid = response.json().Guid;
         console.log(response.json());
         console.log(this.guid);
-
-    }
-
-    );
+        });
 
 
   }
